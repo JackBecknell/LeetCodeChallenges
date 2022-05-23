@@ -1,5 +1,6 @@
-from operator import index
-
+# This code runs as I intended, as it takes a list of lists and organizes the numbers
+# into one large list by numerical order but this isn't what LeetCode wants.
+# I will have to do some more research on the challenge...
 
 lists = [[1,4,5,7],[1,3,4,8],[2,6,9]]
 # Output: [1,1,2,3,4,4,5,6,7,8,9]
