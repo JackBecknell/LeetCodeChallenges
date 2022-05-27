@@ -25,6 +25,8 @@ def find_greatest_volume(height):
 
     return return_value
 
+biggest_container = find_greatest_volume([100,1,1,1,1,1,100])
+print(biggest_container)
 
 # def find_greatest_volume(int_list):
 #     return_value = 0
@@ -49,8 +51,7 @@ def find_greatest_volume(height):
 #     return return_value
 
 
-biggest_container = find_greatest_volume([100,1,1,1,1,1,100])
-print(biggest_container)
+
 
 # VVV first attempt works but is DEFINITELY the brute force method (and the not enough coffee method). Definitely cleaner above.
 
