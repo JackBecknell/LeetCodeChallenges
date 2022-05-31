@@ -1,7 +1,7 @@
 # Given a string s, find the length of the longest substring without repeating characters.
 
 def lengthOfLongestSubstring2(s):
-    # working list holds the current set of non-duplicate chars
+    # working list hold s the current set of non-duplicate chars
     working_list = []
     # return value holds the longes yet iteration of non-duplicates
     return_value = 0
