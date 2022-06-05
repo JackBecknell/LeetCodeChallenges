@@ -21,41 +21,61 @@ phone_number_to_letter_dict = {
   "9":["w","x","y","z"]
   }
 
-def letterCombinations (integer, dict):
+
+def letterCombinations (digits, dict):
+    if digits == "":
+        return []
     return_value = []
-    nums_list = [str(x) for x in str(integer)]
-    if '1' or '0' in nums_list:
-        if nums_list.__contains__('0'):
-            nums_list.remove('0')
-        if nums_list.__contains__('1'):
-            nums_list.remove('1')
-    elif len(nums_list > 4):
-        return('Sorry, this function was intended to recieve 4 digit integers.')
-    correlated_letters_list = []
-    for i in range(len(nums_list)):
-        correlated_letters_list.append(dict[nums_list[i]])
-    for i in correlated_letters_list[0]:
-        if len(correlated_letters_list) == 1:
+    nums_list = [str(x) for x in str(digits)]
+    for i in dict[nums_list[0]]:
+        if len(nums_list) == 1:
             return_value.append(i)
         else:
-            for i2 in correlated_letters_list[1]:
-                if len(correlated_letters_list) == 2:
+            for i2 in dict[nums_list[1]]:
+                if len(nums_list) == 2:
                     return_value.append(i+i2)
                 else:
-                    for i3 in correlated_letters_list[2]:
-                        if len(correlated_letters_list) == 3:
+                    for i3 in dict[nums_list[2]]:
+                        if len(nums_list) == 3:
                             return_value.append(i+i2+i3)
                         else:
-                            for i4 in correlated_letters_list[3]:
-                                if len(correlated_letters_list) == 4:
+                            for i4 in dict[nums_list[3]]:
+                                if len(nums_list) == 4:
                                     return_value.append(i+i2+i3+i4)
     return return_value
-        
 
-    
-
-answer = letterCombinations(None,phone_number_to_letter_dict)
+answer = letterCombinations("",phone_number_to_letter_dict)
 print(answer)
 
-# for all dictionary values at zero index
-    # add all values
+# First attempt worked, now to slim it down a bit. (Also I coded it to take in an int but on leetcode it takes a str)
+
+# def letterCombinations (integer, dict):
+#     return_value = []
+#     nums_list = [str(x) for x in str(integer)]
+#     if '1' or '0' in nums_list:
+#         if nums_list.__contains__('0'):
+#             nums_list.remove('0')
+#         if nums_list.__contains__('1'):
+#             nums_list.remove('1')
+#     correlated_letters_list = []
+#     for i in range(len(nums_list)):
+#         correlated_letters_list.append(dict[nums_list[i]])
+#     for i in correlated_letters_list[0]:
+#         if len(correlated_letters_list) == 1:
+#             return_value.append(i)
+#         else:
+#             for i2 in correlated_letters_list[1]:
+#                 if len(correlated_letters_list) == 2:
+#                     return_value.append(i+i2)
+#                 else:
+#                     for i3 in correlated_letters_list[2]:
+#                         if len(correlated_letters_list) == 3:
+#                             return_value.append(i+i2+i3)
+#                         else:
+#                             for i4 in correlated_letters_list[3]:
+#                                 if len(correlated_letters_list) == 4:
+#                                     return_value.append(i+i2+i3+i4)
+#     return return_value
+
+# answer = letterCombinations(123,phone_number_to_letter_dict)
+# print(answer)
